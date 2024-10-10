@@ -59,6 +59,7 @@ class SideNav extends PureComponent<Props> {
 
     if (isUsingAuth && !isUserAuthorized(me.role, VIEWER_ROLE)) {
       // sidenav is available at least for VIEWER_ROLE
+      console.log('Ruolo utente: ' + me.role)
       return null
     }
 
@@ -67,7 +68,7 @@ class SideNav extends PureComponent<Props> {
 
     const isDefaultPage = location.split('/').includes(DEFAULT_HOME_PAGE)
 
-    const hostPageIsEnabled = !env.hostPageDisabled
+    const hostPageIsEnabled = /* !env.hostPageDisabled */ false
 
     return isHidden ? null : (
       <nav className="sidebar" data-test="sidebar">
@@ -107,7 +108,7 @@ class SideNav extends PureComponent<Props> {
         >
           <NavHeader link={`${sourcePrefix}/dashboards`} title="Dashboards" />
         </NavBlock>
-        <NavBlock
+        {/* <NavBlock
           highlightWhen={[
             'alerts',
             'alert-rules',
@@ -133,18 +134,17 @@ class SideNav extends PureComponent<Props> {
           <NavListItem link={`${sourcePrefix}/alerts`}>
             Alert History
           </NavListItem>
-        </NavBlock>
-
-        <NavBlock
+        </NavBlock> */}
+        {/* <NavBlock
           highlightWhen={['logs']}
           icon="wood"
           link="/logs"
           location={location}
         >
           <NavHeader link={'/logs'} title="Log Viewer" />
-        </NavBlock>
+        </NavBlock> */}
 
-        <Authorized
+        {/* <Authorized
           requiredRole={ADMIN_ROLE}
           replaceWithIfNotUsingAuth={
             <NavBlock
@@ -179,8 +179,8 @@ class SideNav extends PureComponent<Props> {
               InfluxDB
             </NavListItem>
           </NavBlock>
-        </Authorized>
-        <NavBlock
+        </Authorized>*/}
+        {/* <NavBlock
           highlightWhen={['manage-sources', 'kapacitors']}
           highlightUnless={['alert-rules', 'tickscripts', 'fluxtasks']}
           icon="wrench"
@@ -191,7 +191,7 @@ class SideNav extends PureComponent<Props> {
             link={`${sourcePrefix}/manage-sources`}
             title="Configuration"
           />
-        </NavBlock>
+        </NavBlock> */}
         {isUsingAuth && (
           <UserNavBlock logoutLink={logoutLink} links={links} me={me} />
         )}
