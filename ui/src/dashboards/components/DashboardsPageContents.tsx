@@ -92,13 +92,13 @@ class DashboardsPageContents extends Component<Props, State> {
                   onClick={this.handleToggleOverlay}
                   testId="import-dashboard--button"
                 />
-                <Button
+                {/* <Button
                   text="Create Dashboard"
                   icon={IconFont.Plus}
                   onClick={onCreateDashboard}
                   color={ComponentColor.Primary}
                   testId="create-dashboard-button"
-                />
+                /> */}
               </>
             </Authorized>
           </div>

@@ -144,8 +144,6 @@ class DashboardsTable extends PureComponent<Props> {
   }
 
   private renderEmptyState(): JSX.Element {
-    const {onCreateDashboard} = this.props
-
     return (
       <Authorized
         requiredRole={EDITOR_ROLE}
@@ -154,13 +152,6 @@ class DashboardsTable extends PureComponent<Props> {
         <div className="generic-empty-state">
           <h4>Looks like you don’t have any dashboards</h4>
           <br />
-          <button
-            className="btn btn-sm btn-primary"
-            onClick={onCreateDashboard}
-            data-test="create-dashboard"
-          >
-            <span className="icon plus" /> Create Dashboard
-          </button>
         </div>
       </Authorized>
     )
