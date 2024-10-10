@@ -69,6 +69,7 @@ class DashboardsTable extends PureComponent<Props> {
               </td>
               <td>{this.getDashboardTemplates(dashboard)}</td>
               <td className="text-right">
+                {/*
                 <Authorized
                   requiredRole={VIEWER_ROLE}
                   replaceWithIfNotAuthorized={<div />}
@@ -101,7 +102,7 @@ class DashboardsTable extends PureComponent<Props> {
                       customClass="table--show-on-row-hover"
                     />
                   </>
-                </Authorized>
+                </Authorized> */}
               </td>
             </tr>
           ))}
