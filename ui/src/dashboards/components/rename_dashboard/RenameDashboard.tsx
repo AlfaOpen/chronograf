@@ -39,14 +39,8 @@ class RenameDashboard extends Component<Props, State> {
     }
 
     return (
-      <div className="rename-dashboard" data-test="rename-dashboard">
-        <div
-          className="rename-dashboard--title"
-          onClick={this.handleStartEditing}
-        >
-          {name}
-          <span className="icon pencil" />
-        </div>
+      <div className="no-rename-dashboard" data-test="rename-dashboard">
+        <div className="no-rename-dashboard--title"> {name} </div>
       </div>
     )
   }
